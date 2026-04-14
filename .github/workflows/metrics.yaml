@@ -1,0 +1,59 @@
+name: Metrics
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Languages
+        uses: lowlighter/metrics@v3
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: LiniiS
+          filename: github-metrics.svg
+
+          template: classic
+          base: ""
+          config_timezone: America/Sao_Paulo
+
+          plugin_languages: yes
+          plugin_languages_indepth: yes
+          plugin_languages_sections: most-used
+          plugin_languages_limit: 6
+          plugin_languages_threshold: 0%
+          plugin_languages_colors: github
+
+      - name: Base stats
+        uses: lowlighter/metrics@v3
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: LiniiS
+          filename: github-metrics-base.svg
+
+          template: classic
+          base: header, activity, community, repositories
+          config_timezone: America/Sao_Paulo
+
+      - name: Isometric calendar
+        uses: lowlighter/metrics@v3
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: LiniiS
+          filename: github-metrics-calendar.svg
+
+          template: classic
+          base: ""
+          config_timezone: America/Sao_Paulo
+
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
