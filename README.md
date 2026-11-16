@@ -26,4 +26,6 @@ I'm Aline — software developer and tech educator from Brazil.
 |:---:|:---:|
 | ![Base stats](./github-metrics-base.svg) | ![Top languages](./github-metrics.svg) |
 
-![Contribution calendar](./github-metrics-calendar.svg)
+| | |
+|:---:|:---:|
+![Contribution calendar](./github-metrics-calendar.svg) | <img width="490" height="310" alt="guild-card-LiniiS" src="https://github.com/user-attachments/assets/2859b44a-1b3c-4812-81a2-164dfd0b678c" /> |
